@@ -938,7 +938,7 @@ const Article = ({ coverWidth, coverTop, posterWidth, width }) => {
             <div className={`${module.links}`}>
               <Roundedbtn
                 borderRadius="2px"
-                bgColor="white"
+                backgroundColor="white"
                 width="7vw"
                 inRound="Programming"
                 color="grey"
@@ -946,7 +946,7 @@ const Article = ({ coverWidth, coverTop, posterWidth, width }) => {
               />
               <Roundedbtn
                 borderRadius="2px"
-                bgColor="white"
+                backgroundColor="white"
                 width="7vw"
                 inRound="Data Science"
                 color="grey"
@@ -954,7 +954,7 @@ const Article = ({ coverWidth, coverTop, posterWidth, width }) => {
               />
               <Roundedbtn
                 borderRadius="2px"
-                bgColor="white"
+                backgroundColor="white"
                 width="7vw"
                 inRound="Technology"
                 color="grey"
@@ -962,7 +962,7 @@ const Article = ({ coverWidth, coverTop, posterWidth, width }) => {
               />
               <Roundedbtn
                 borderRadius="2px"
-                bgColor="white"
+                backgroundColor="white"
                 width="9vw"
                 inRound="Self Improvement"
                 color="grey"
@@ -970,7 +970,7 @@ const Article = ({ coverWidth, coverTop, posterWidth, width }) => {
               />
               <Roundedbtn
                 borderRadius="2px"
-                bgColor="white"
+                backgroundColor="white"
                 width="7vw"
                 inRound="Writing"
                 color="grey"
@@ -978,7 +978,7 @@ const Article = ({ coverWidth, coverTop, posterWidth, width }) => {
               />
               <Roundedbtn
                 borderRadius="2px"
-                bgColor="white"
+                backgroundColor="white"
                 width="8vw"
                 inRound="Relationships"
                 color="grey"
@@ -986,7 +986,7 @@ const Article = ({ coverWidth, coverTop, posterWidth, width }) => {
               />
               <Roundedbtn
                 borderRadius="2px"
-                bgColor="white"
+                backgroundColor="white"
                 width="10vw"
                 inRound="Machine Learning"
                 color="grey"
@@ -994,7 +994,7 @@ const Article = ({ coverWidth, coverTop, posterWidth, width }) => {
               />
               <Roundedbtn
                 borderRadius="2px"
-                bgColor="white"
+                backgroundColor="white"
                 width="7vw"
                 inRound="Productivity"
                 color="grey"
@@ -1002,7 +1002,7 @@ const Article = ({ coverWidth, coverTop, posterWidth, width }) => {
               />
               <Roundedbtn
                 borderRadius="2px"
-                bgColor="white"
+                backgroundColor="white"
                 width="7vw"
                 inRound="Politics"
                 color="grey"

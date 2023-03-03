@@ -6,12 +6,16 @@ const initialState = {
   isLoggedIn: false,
   error: null,
   loading: true,
+  singleuser: null,
 };
 
 export const userSlice = createSlice({
   name: "counter",
   initialState,
   reducers: {
+    setloading: (state, action) => {
+      state.loading = true;
+    },
     loaduser: (state, action) => {
       state.user = action.payload;
       state.isLoggedIn = true;
@@ -26,14 +30,27 @@ export const userSlice = createSlice({
       state.user = null;
       state.isLoggedIn = false;
       state.error = null;
+      state.loading = false;
     },
     loadblogs: (state, action) => {
       state.blogs = action.payload;
+      state.loading = false;
+    },
+    loadsingleuser: (state, action) => {
+      state.singleuser = action.payload;
+      state.loading = false;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { loaduser, errors, signout, loadblogs } = userSlice.actions;
+export const {
+  loaduser,
+  errors,
+  signout,
+  loadblogs,
+  loadsingleuser,
+  setloading,
+} = userSlice.actions;
 
 export default userSlice.reducer;

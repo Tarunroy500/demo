@@ -14,6 +14,7 @@ const {
   listblog,
   currentuser,
   uploadBlog,
+  singleUser
 } = require("../controllers/indexController");
 const { isLoggedIn } = require("../utils/auth");
 
@@ -54,6 +55,9 @@ router.post("/create-stories", isLoggedIn, createstories);
 
 // get /show-stories - show all blogs of user
 router.get("/show-stories", isLoggedIn, showstories);
+
+// get /show-stories - show all blogs of user
+router.get("/singleuser/:username", singleUser);
 
 // get /blogs - show all blogs
 router.get("/blogs", blogs);

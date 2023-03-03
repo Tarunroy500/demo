@@ -9,7 +9,7 @@ import {
   asyncloadblogs,
 } from "../store/userActions";
 import { useDispatch, useSelector } from "react-redux";
-import Editor from "./Editor";
+import Editor from "./Editor/Editor";
 const Sir = () => {
   const notify = (msg) => toast(msg ?? "Wow so easy!");
   const dispatch = useDispatch();

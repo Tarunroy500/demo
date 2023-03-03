@@ -1,19 +1,27 @@
-import { loaduser, errors, signout, loadblogs } from "./UserSlice";
+import {
+  loaduser,
+  errors,
+  signout,
+  loadblogs,
+  loadsingleuser,
+  setloading,
+} from "./UserSlice";
 import axios from "../axios";
 import Axios from "axios";
-
 export const asyncsignup = (newuser) => async (dispatch) => {
   try {
-    // console.log(newuser);
     const { data } = await Axios.get(
       `https://www.googleapis.com/oauth2/v1/userinfo?access_token=${newuser}`
     );
-    console.log(data);
     const res = await axios.post("/signup", {
       name: data.name,
       username: data.email,
       email: data.email,
       password: data.id,
+      avtar: {
+        public_id: data.email,
+        url: data.picture,
+      },
     });
     dispatch(loaduser(res.data.user));
   } catch (err) {
@@ -53,18 +61,29 @@ export const asyncsignout = () => async (dispatch) => {
 
 export const asyncloadblogs = () => async (dispatch) => {
   try {
+    dispatch(setloading());
     const { data } = await axios.get("/blogs");
     // console.log("loaduser action>>>>>", data);
-    // console.log(data);
-    dispatch(loadblogs(data.blogs));
+    dispatch(loadblogs(data?.blogs));
   } catch (err) {
-    dispatch(errors(err.response.data.message));
+    dispatch(errors(err?.response?.data?.message));
   }
 };
 
 export const asynccreateblog = (blog) => async (dispatch) => {
   try {
     await axios.post("/create-stories", blog);
+  } catch (err) {
+    console.log(err.response);
+    dispatch(errors(err.response.data.message));
+  }
+};
+
+export const asyncsingleuser = (username) => async (dispatch) => {
+  try {
+
+    const { data } = await axios.get(`/singleuser/${username}`);
+    dispatch(loadsingleuser(data.user));
   } catch (err) {
     dispatch(errors(err.response.data.message));
   }

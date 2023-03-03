@@ -3,11 +3,13 @@ import module from "./Navbar.module.css";
 // import medium_logo from "../../assets/logo_medium.png";
 import { RiSearchLine } from "react-icons/ri";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { asyncsignout } from "../../store/userActions";
 const LoggedInNavbar = () => {
   const [dropDown, setDropDown] = useState(false);
+  const { user } = useSelector((state) => state.user);
+  const navigate = useNavigate();
   const Dispatch = useDispatch();
   const removeDropdown = (e) => {
     if (
@@ -30,7 +32,14 @@ const LoggedInNavbar = () => {
     <>
       <nav className={module.Lnav}>
         <div className={`${module.Lleft} ${module.Lnav}`}>
-          <svg viewBox="0 0 1043.63 592.71" className="bn hd">
+          <svg
+            viewBox="0 0 1043.63 592.71"
+            onClick={() => navigate("/")}
+            className="bn hd"
+            style={{
+              cursor: "pointer",
+            }}
+          >
             <g data-name="Layer 2">
               <g data-name="Layer 1">
                 <path d="M588.67 296.36c0 163.67-131.78 296.35-294.33 296.35S0 460 0 296.36 131.78 0 294.34 0s294.33 132.69 294.33 296.36M911.56 296.36c0 154.06-65.89 279-147.17 279s-147.17-124.94-147.17-279 65.88-279 147.16-279 147.17 124.9 147.17 279M1043.63 296.36c0 138-23.17 249.94-51.76 249.94s-51.75-111.91-51.75-249.94 23.17-249.94 51.75-249.94 51.76 111.9 51.76 249.94"></path>
@@ -43,7 +52,7 @@ const LoggedInNavbar = () => {
           </form>
         </div>
         <div className={`${module.Lright} `}>
-          <div className={`${module.Lwrite}`}>
+          <Link to="/new-story" className={`${module.Lwrite}`}>
             <svg
               width="24"
               height="24"
@@ -62,11 +71,10 @@ const LoggedInNavbar = () => {
               ></path>
             </svg>
             <h5>Write</h5>
-          </div>
+          </Link>
           <svg
             width="24"
             height="24"
-            viewBox="0 0 60 60"
             fill="none"
             color="#838383"
             aria-label="Notifications"
@@ -91,14 +99,14 @@ const LoggedInNavbar = () => {
               <img
                 id="dropdown"
                 draggable="false"
-                src="https://miro.medium.com/fit/c/64/64/0*Jja5-LUVZq2qUgyl"
+                src={`${user?.avtar?.url}`}
                 alt=""
               />
               {dropDown ? <FaChevronUp /> : <FaChevronDown />}
             </div>
             {dropDown ? (
               <div className={`${module.dropDown}`}>
-                <Link to="/profile">
+                <Link to={`/${user?.username}`}>
                   <div className={`${module.list}`}>
                     <svg
                       width="24"
@@ -214,12 +222,12 @@ const LoggedInNavbar = () => {
                     <h5>Gift a membership</h5>
                   </div>
                 </Link>
-                <Link onClick={handleSignOut}>
+                <div className="cp" onClick={handleSignOut}>
                   <div className={`${module.list} ${module.last}`}>
                     <h5>Sign out</h5>
-                    <h5>zKing2842@gmail.com</h5>
+                    <h5>{user.email}</h5>
                   </div>
-                </Link>
+                </div>
               </div>
             ) : (
               ""

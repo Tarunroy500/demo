@@ -9,9 +9,7 @@ const HomePage = () => {
   return (
     <>
       {isLoggedIn ? (
-        <>
-          <LoggedInPage />
-        </>
+        <LoggedInPage />
       ) : (
         <>
           <Header /> <Trending /> <Article />

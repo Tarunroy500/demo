@@ -12,7 +12,9 @@
   align-items: center;
   border-radius: 22px;
 }
-
+.cp{
+  cursor: pointer;
+}
 .curvy_box h5{
   font-size: 1.5vmax;
 }

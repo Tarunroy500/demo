@@ -1,6 +1,6 @@
 import React from "react";
 import Roundedbtn from "../Ui/Roundedbtn";
-import module from './Picks.module.css'
+import module from "./Picks.module.css";
 const Picks = () => {
   return (
     <>
@@ -8,13 +8,12 @@ const Picks = () => {
         <h5>Staff Picks</h5>
         <div className={module.pick}>
           <h6>
-            {" "}
             <span>
               <img
                 src="https://images.unsplash.com/photo-1676918555344-e8e8f9ba410d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
                 alt=""
               />
-            </span>{" "}
+            </span>
             Molly Ruby in Towards Data Science
           </h6>
           <h5>
@@ -23,13 +22,12 @@ const Picks = () => {
         </div>
         <div className={module.pick}>
           <h6>
-            {" "}
             <span>
               <img
                 src="https://images.unsplash.com/photo-1676918555344-e8e8f9ba410d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
                 alt=""
               />
-            </span>{" "}
+            </span>
             Molly Ruby in Towards Data Science
           </h6>
           <h5>
@@ -38,13 +36,12 @@ const Picks = () => {
         </div>
         <div className={module.pick}>
           <h6>
-            {" "}
             <span>
               <img
                 src="https://images.unsplash.com/photo-1676918555344-e8e8f9ba410d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
                 alt=""
               />
-            </span>{" "}
+            </span>
             Molly Ruby in Towards Data Science
           </h6>
           <h5>

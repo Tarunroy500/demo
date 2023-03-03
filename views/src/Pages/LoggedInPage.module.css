@@ -2,20 +2,21 @@
   width: 100%;
   display: flex;
   position: relative;
+  justify-content: center;
 }
 
 .left {
-  width: 70vmax;
+  width: 60vmax;
   display: flex;
   justify-content: center;
   height: 87vh;
 }
 
 .right {
-  background-color: red;
   width: 30vmax;
   height: 87vh;
   overflow-y: scroll;
+  padding: 1vmax 1vmax;
 }
 
 .topBar {

@@ -37,7 +37,7 @@ const userModel = new mongoose.Schema(
       maxLength: [143, "about must have almost 143 characters"],
       // required: [true, "username is required"],
     },
-    avatar: {
+    avtar: {
       type: Object,
       default: {
         public_id: "",
@@ -62,7 +62,7 @@ userModel.methods.comparepassword = function (userpassword) {
 };
 
 userModel.methods.gettoken = function () {
-  return jwt.sign({ id: this._id }, "SECRETKEYJWT", { expiresIn: "1h" });
+  return jwt.sign({ id: this._id }, "SECRETKEYJWT", { expiresIn: "4h" });
 };
 
 const user = mongoose.model("user", userModel);

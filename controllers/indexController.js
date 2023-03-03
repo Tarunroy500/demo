@@ -16,7 +16,8 @@ exports.homepage = (req, res, next) => {
   res.json({ message: "This is homepage...", user: req.user });
 };
 
-exports.currentuser = (req, res) => {
+exports.currentuser = async (req, res) => {78uyghvb 7
+  await req.user.populate("stories");
   res.status(200).json({ user: req.user });
 };
 
@@ -161,6 +162,7 @@ exports.createstories = async (req, res) => {
     await req.user.save();
     res.status(201).json({ message: "blog posted" });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error });
   }
 };
@@ -233,4 +235,9 @@ exports.uploadBlog = async (req, res) => {
   } catch (error) {
     res.status(500).json(error);
   }
+};
+
+exports.singleUser = async (req, res) => {
+  const user = await User.findOne({ username: req.params.username });
+  res.status(200).json({ user: user });
 };
